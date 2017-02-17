@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chuchuka.SharePoint.Utilities.Web", "Chuchuka.SharePoint.Utilities.Web\Chuchuka.SharePoint.Utilities.Web.csproj", "{DEF6BE53-6682-4E4D-B984-A0A03B1F492F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chuchuka.SharePoint.Utilities", "Chuchuka.SharePoint.Utilities\Chuchuka.SharePoint.Utilities.csproj", "{5D9EA6E9-7399-4D77-BC22-F1F1B3203C54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEF6BE53-6682-4E4D-B984-A0A03B1F492F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEF6BE53-6682-4E4D-B984-A0A03B1F492F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEF6BE53-6682-4E4D-B984-A0A03B1F492F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEF6BE53-6682-4E4D-B984-A0A03B1F492F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9EA6E9-7399-4D77-BC22-F1F1B3203C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9EA6E9-7399-4D77-BC22-F1F1B3203C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9EA6E9-7399-4D77-BC22-F1F1B3203C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9EA6E9-7399-4D77-BC22-F1F1B3203C54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
