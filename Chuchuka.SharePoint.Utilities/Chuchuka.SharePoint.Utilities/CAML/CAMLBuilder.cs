@@ -26,7 +26,8 @@ namespace Chuchuka.SharePoint.Utilities.CAML
 		IsNotNull,
 		IsNull,
 		Membership,
-		Includes
+		Includes,
+		In
 	}
 
 	public class CAMLBuilder

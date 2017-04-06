@@ -1,12 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 
 namespace Chuchuka.SharePoint.Utilities.CAML
 {
 	/// <summary>
-	/// Class that holds filter expressions that can be used by the <see cref="CAMLBuilder"/>. 
+	/// Class that holds filter expressions that can be used by <see cref="CAMLBuilder"/>. 
 	/// </summary>
 	public class CAMLFilter
 	{
@@ -58,6 +60,32 @@ namespace Chuchuka.SharePoint.Utilities.CAML
 			return filter;
 		}
 
+		public static CAMLFilter In(string name, IList<object> values, SPFieldType camlType)
+		{
+			if (!values.Any())
+				throw new ArgumentException("values");
+
+			var filter = new CAMLFilter();
+			var valuesCaml = values.Select(x => string.Format("<Value Type='{0}'>{1}</Value>", camlType, x));
+			filter.FilterExpression = string.Format(CultureInfo.InvariantCulture,
+				"<{0}><FieldRef Name='{1}' {2}/><Values>{3}</Values></{0}>",
+				Operator.In, name, camlType == SPFieldType.User || camlType == SPFieldType.Lookup ? "LookupId='TRUE'" : "", string.Join("", valuesCaml));
+			return filter;
+		}
+
+		public static CAMLFilter In(Guid fieldId, IList<object> values, SPFieldType camlType)
+		{
+			if (!values.Any())
+				throw new ArgumentException("values");
+
+			var filter = new CAMLFilter();
+			var valuesCaml = values.Select(x => string.Format("<Value Type='{0}'>{1}</Value>", camlType, x));
+			filter.FilterExpression = string.Format(CultureInfo.InvariantCulture,
+				"<{0}><FieldRef ID='{1}' {2}/><Values>{3}</Values></{0}>",
+				Operator.In, fieldId, camlType == SPFieldType.User || camlType == SPFieldType.Lookup ? "LookupId='TRUE'" : "", string.Join("", valuesCaml));
+			return filter;
+		}
+
 		public static CAMLFilter And(CAMLFilter filter1, CAMLFilter filter2)
 		{
 			var filter = new CAMLFilter();
@@ -72,7 +100,7 @@ namespace Chuchuka.SharePoint.Utilities.CAML
 			return filter;
 		}
 
-#region Type-Specific
+		#region Type-Specific
 		public static CAMLFilter Eq(Guid id, string value)
 		{
 			return Filter(Operator.Eq, id, value, SPFieldType.Text);
@@ -172,6 +200,16 @@ namespace Chuchuka.SharePoint.Utilities.CAML
 		{
 			return Filter(Operator.Leq, name, SPUtility.CreateISO8601DateTimeFromSystemDateTime(value), SPFieldType.DateTime);
 		}
-#endregion
+
+		public static CAMLFilter In(Guid id, IEnumerable<Guid> values)
+		{
+			return In(id, values.Cast<object>().ToList(), SPFieldType.Guid);
+		}
+
+		public static CAMLFilter In(string name, IEnumerable<Guid> values)
+		{
+			return In(name, values.Cast<object>().ToList(), SPFieldType.Guid);
+		}
+		#endregion
 	}
 }
