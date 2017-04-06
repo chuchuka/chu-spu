@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 
-namespace Chuchuka.SharePoint.Utilities.CAML
+namespace Chuchuka.SharePoint.Utilities.Utilities.CAML
 {
 	/// <summary>
 	/// Class that holds filter expressions that can be used by <see cref="CAMLBuilder"/>. 

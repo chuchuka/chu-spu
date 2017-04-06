@@ -30,24 +30,62 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BusinessData, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.BusinessData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SecureStoreService, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Office.SecureStoreService\v4.0_15.0.0.0__71e9bce111e9429c\Microsoft.Office.SecureStoreService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Office.Server.Search\v4.0_15.0.0.0__71e9bce111e9429c\Microsoft.Office.Server.Search.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.SharePoint\v4.0_15.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAML\CAMLBuilder.cs" />
-    <Compile Include="CAML\CAMLFilter.cs" />
-    <Compile Include="CAML\CAMLOrderBy.cs" />
+    <Compile Include="Extensions\CollectionsExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\HashtableExtensions.cs" />
+    <Compile Include="Extensions\SPListExtensions.cs" />
+    <Compile Include="Extensions\SPWebExtensions.cs" />
+    <Compile Include="Utilities\Batch\BatchResult.cs" />
+    <Compile Include="Utilities\Batch\BatchUpdateUtility.cs" />
+    <Compile Include="Utilities\CAML\CAMLBuilder.cs" />
+    <Compile Include="Utilities\CAML\CAMLFilter.cs" />
+    <Compile Include="Utilities\CAML\CAMLOrderBy.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DisabledEventsScope.cs" />
+    <Compile Include="Utilities\Logging\Category.cs" />
+    <Compile Include="Utilities\Logging\Logger.cs" />
+    <Compile Include="Utilities\Search\ManagedPropertyDTO.cs" />
+    <Compile Include="Utilities\Search\PropertyRuleDTO.cs" />
+    <Compile Include="Utilities\Search\ResultTypeDTO.cs" />
+    <Compile Include="Utilities\Search\SearchSettingsUtility.cs" />
+    <Compile Include="Utilities\SecureStore\SecureStoreCredentials.cs" />
+    <Compile Include="Utilities\SecureStore\SecureStoreUtility.cs" />
+    <Compile Include="Utilities\ServiceBehaviours\JsonErrorBehaviourAttribute.cs" />
+    <Compile Include="Utilities\ServiceBehaviours\JsonErrorHandler.cs" />
+    <Compile Include="Utilities\ServiceBehaviours\JsonErrorWebHttpBehaviour.cs" />
+    <Compile Include="Utilities\ServiceBehaviours\JsonFault.cs" />
+    <Compile Include="Utilities\ServiceBehaviours\ValidateFormDigestAttribute.cs" />
+    <Compile Include="Utilities\SPStringUtility.cs" />
+    <Compile Include="Utilities\UnsafeUpdatesContext.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

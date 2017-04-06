@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Chuchuka.SharePoint.Utilities.CAML
+namespace Chuchuka.SharePoint.Utilities.Utilities.CAML
 {
 	public class CAMLOrderBy
 	{

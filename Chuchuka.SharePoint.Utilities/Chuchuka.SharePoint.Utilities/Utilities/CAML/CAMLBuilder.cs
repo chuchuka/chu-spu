@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 
-namespace Chuchuka.SharePoint.Utilities.CAML
+namespace Chuchuka.SharePoint.Utilities.Utilities.CAML
 {
 	public enum Closure
 	{
