@@ -58,10 +58,16 @@
     <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\microsoft-ajax\microsoft.ajax.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\sharepoint\SharePoint.d.ts" />
+    <TypeScriptCompile Include="Utilities\Chuchuka.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Utilities\Chuchuka.js">
+      <DependentUpon>Chuchuka.ts</DependentUpon>
+    </Content>
+    <Content Include="Utilities\Chuchuka.js.map">
+      <DependentUpon>Chuchuka.ts</DependentUpon>
+    </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>
